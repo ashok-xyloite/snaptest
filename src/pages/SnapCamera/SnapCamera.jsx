@@ -99,7 +99,7 @@ const SnapCamera = () => {
     if (isVisible) {
       timeoutId = setTimeout(() => {
         setIsVisible(false);
-      }, 3000);
+      }, 10000);
     }
     return () => clearTimeout(timeoutId);
   }, [isVisible]);
