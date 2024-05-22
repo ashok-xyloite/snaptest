@@ -99,7 +99,7 @@ const SnapCamera = () => {
     if (isVisible) {
       timeoutId = setTimeout(() => {
         setIsVisible(false);
-      }, 2000);
+      }, 3000);
     }
     return () => clearTimeout(timeoutId);
   }, [isVisible]);
@@ -107,13 +107,12 @@ const SnapCamera = () => {
   return (
     <div className="container" >
       <canvas ref={canvasRef}/>
-      <div className="footer">
-        <select ref={cameraSelectRef} id='ccc' className="styled-select"></select>
-        <select ref={lensSelectRef} id='ddd' className="styled-select"></select>
+      <div style={{display: isVisible ? "flex" : "none", justifyContent:'center'}}>
+        <div className="footer"> 
+        <select ref={cameraSelectRef}  className="styled-select"></select>
+        <select ref={lensSelectRef}  className="styled-select"></select>
+        </div>
       </div>
-      {/* {isVisible && (
-        <h1>Hello</h1>
-      )} */}
     </div >
 
   );
